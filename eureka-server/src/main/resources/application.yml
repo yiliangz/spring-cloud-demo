@@ -1,0 +1,33 @@
+spring:
+  application:
+    name: eureka
+
+server:
+  port: 8761
+
+management:
+  port: 8001
+
+eureka:
+  instance:
+    hostname: localhost
+    preferIpAddress: true
+  client:
+    registerWithEureka: false
+    fetchRegistry: false
+
+# ------------------------------------------------
+# 集群模式使用
+#    serviceUrl:
+#      defaultZone: http://localhost:8762/eureka/
+# ------------------------------------------------
+  server:
+    waitTimeInMsWhenSyncEmpty: 0
+    enableSelfPreservation: false
+    evictionIntervalTimerInMs: 15000
+
+endpoints:
+  shutdown:
+    enabled: true     #启用shutdown
+    sensitive: false  #禁用密码验证
+

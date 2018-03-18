@@ -1,0 +1,21 @@
+spring:
+  application:
+    name: service-server
+
+server:
+  port: 8003
+management:
+  port: 9003
+
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://localhost:8761/eureka/
+  instance:
+    metadataMap:
+      instanceId: dev
+    leaseRenewalIntervalInSeconds: 20
+    leaseExpirationDurationInSeconds: 60
+  server:
+    waitTimeInMsWhenSyncEmpty: 0
+
